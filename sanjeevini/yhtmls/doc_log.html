@@ -1,0 +1,80 @@
+{%load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Index Page</title>
+	<link rel="stylesheet" href="{%static 'home.css'%}">
+</head>
+
+<style>
+.myDiv {
+  height: 300px;
+  width: 300px;
+  text-align: center;
+  position:relative;
+  left: 600px;
+  border-radius: 10px;
+}
+.myDiv:hover{
+  box-shadow: 10px 10px 10px #ffff00;
+}
+
+
+.logindoc input[type="password"],.logindoc input[type="name"]
+{
+    border: 0;
+    background: black;
+    display: block;
+    margin: 10px auto;
+    text-align: center;
+    border: 2px solid #3498db;
+    padding: 6px 8px;
+    width:150px;
+    outline: none;
+    color: white;
+    border-radius: 20px;
+    transition: 0.20 s;
+    font-size: 15px;
+
+}
+
+
+</style>
+
+<body style="background-color:#fff3e6;">
+
+<div style= "background-image: linear-gradient(80deg,#00ffff,#ffff00);">
+
+<center> <font size="12">S	A	N	J	E	E	V	I	N	I</font> </center>
+
+
+<div class="topnav">
+  <a class="active" href="/">Home</a>
+  <a href="https://www.medicalnewstoday.com/">News</a>
+  <a href="https://www.icmr.gov.in/">ICMR</a>
+  <a href="#about">About</a>
+</div></div>
+<div style= "background-image: url("{%static 'images/home_image.jpg'%}" ></div>
+ 
+
+
+                                       <!–– doctor login start ––>
+    
+    <div class="mydiv" style="background-color:#33ccff">
+    <div style="display: block">
+  
+  <form class="logindoc" name="form" action="doctor_login" method="post">
+        {% csrf_token %}
+        <h2 style="color:red">DOCTOR LOGIN</h2>    
+            
+        <input type="name" id="username" name="username" placeholder="username" required autocomplete="off"    > <br> 
+        <input type="password" id="password" name="password" placeholder="password" required autocomplete="off"    ><br>   
+        <input style="background-color: #e4f00e" type="submit" name="submitdoc" value="submit" "><br><br>
+        <a href="docsignup.php" style="color: white">Click to create new account</a>
+   </form>  </div> </div>                                
+   <!––doctor login end––>
+
+</body>
+</html>
+
